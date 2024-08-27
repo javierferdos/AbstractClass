@@ -6,6 +6,9 @@ import org.fer.pooclasesabstractas.form.elementos.TextAreaForm;
 import org.fer.pooclasesabstractas.form.elementos.inputForm;
 import org.fer.pooclasesabstractas.form.elementos.select.Opcion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EjemploForm {
     public static void main(String[] args) {
         inputForm username = new inputForm("username");
@@ -28,6 +31,17 @@ public class EjemploForm {
         edad.setValor("28");
         experiencia.setValor("........ mas 10 años de experiencia ...........");
         java.setSelected(true);
+
+        List<ElementoForm> elementos = new ArrayList<>();
+        elementos.add(username);
+        elementos.add(password);
+        elementos.add(email);
+        elementos.add(experiencia);
+        elementos.add(lenguaje);
+        for (ElementoForm elementoForm : elementos){
+            System.out.println(elementoForm.dibujarHtml());
+            System.out.println("<br>");
+        }
 
     }
 }
